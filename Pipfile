@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+transformers = "*"
+requests = "*"
+notebook = "*"
+praw = "*"
+pandas = "*"
+ipaddress = "*"
+torch = "*"
+tables = "*"
+torchvision = "*"
+ipywidgets = "*"
+scipy = "*"
+matplotlib = "*"
+seaborn = "*"
+psycopg2 = "*"
+tqdm = "*"
+python-dotenv = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
