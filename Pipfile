@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-transformers = "*"
 requests = "*"
 notebook = "*"
 praw = "*"
@@ -20,6 +19,13 @@ seaborn = "*"
 psycopg2 = "*"
 tqdm = "*"
 python-dotenv = "*"
+datasets = "*"
+scikit-learn = "*"
+accelerate = "*"
+evaluate = "*"
+transformers = {extras = ["torch"], version = "*"}
+word2number = "*"
+xformers = "*"
 
 [dev-packages]
 
