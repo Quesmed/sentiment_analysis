@@ -3,3 +3,4 @@ data/*
 fine-tuning-*
 *.paw
 .DS_STORE
+.ipynb_checkpoints

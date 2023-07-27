@@ -27,6 +27,7 @@ transformers = {extras = ["torch"], version = "*"}
 word2number = "*"
 xformers = "*"
 huggingface-hub = "*"
+openpyxl = "*"
 
 [dev-packages]
 
