@@ -28,6 +28,8 @@ word2number = "*"
 xformers = "*"
 huggingface-hub = "*"
 openpyxl = "*"
+ray = {extras = ["tune"], version = "*"}
+optuna = "*"
 
 [dev-packages]
 
