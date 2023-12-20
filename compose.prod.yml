@@ -37,7 +37,7 @@ services:
 
   comments-theme:
     image: 142412772381.dkr.ecr.eu-west-1.amazonaws.com/prodigy-quesmed-comments:latest
-    command: prodigy textcat.manual theme ./datasets/comments.jsonl --label clinical_update,community,question,education,advocating,dissuading,other --exclusive
+    command: prodigy textcat.manual theme ./datasets/comments.jsonl --label educational,feedback,question,insulting,supporting,humour,frustration --exclusive
     deploy:
       replicas: 1
       update_config:
