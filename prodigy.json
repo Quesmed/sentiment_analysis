@@ -1,0 +1,33 @@
+{
+  "theme": "basic",
+  "ner_manual_label_style": "list",
+  "buttons": ["accept", "reject", "ignore", "undo"],
+  "batch_size": 10,
+  "history_size": 10,
+  "port": 8080,
+  "host": "0.0.0.0",
+  "cors": true,
+  "db": "postgresql",
+  "db_settings": {
+    "sqlite": {
+      "name": "prodigy.db",
+      "path": "./db"
+    },
+    "postgresql": {
+      "host": "127.0.0.1",
+      "port": 5432,
+      "db": "quesmed",
+      "user": "quesmed",
+      "password": ""
+    }
+  },
+  "validate": true,
+  "auto_exclude_current": true,
+  "instant_submit": false,
+  "feed_overlap": false,
+  "show_stats": false,
+  "hide_meta": false,
+  "show_flag": false,
+  "instructions": false,
+  "show_whitespace": false
+}

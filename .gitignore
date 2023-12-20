@@ -1,6 +1,8 @@
 *.env
 data/*
+datasets/*
 fine-tuning-*
 *.paw
 .DS_STORE
-.ipynb_checkpoints
+Pipfile*
+requirements.txt

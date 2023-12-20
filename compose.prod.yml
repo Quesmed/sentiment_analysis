@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  comments-tone:
+    image: 142412772381.dkr.ecr.eu-west-1.amazonaws.com/prodigy-quesmed-comments:latest
+    command: prodigy textcat.manual tone ./datasets/comments.jsonl --label negative,neutral,positive --exclusive
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 60s
+      restart_policy:
+        condition: on-failure
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.comments-tone.rule=Host(`comments-tone.quesmed.com`)
+      - traefik.http.routers.comments-tone.tls=true
+      - traefik.http.routers.comments-tone.middlewares=https_redirect@file
+      - traefik.http.services.comments-tone-service.loadbalancer.server.port=8080
+
+  comments-emotion:
+    image: 142412772381.dkr.ecr.eu-west-1.amazonaws.com/prodigy-quesmed-comments:latest
+    command: prodigy textcat.manual emotion ./datasets/comments.jsonl --label sadness,joy,love,anger,fear,surprise --exclusive
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 60s
+      restart_policy:
+        condition: on-failure
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.comments-emotion.rule=Host(`comments-emotion.quesmed.com`)
+      - traefik.http.routers.comments-emotion.tls=true
+      - traefik.http.routers.comments-emotion.middlewares=https_redirect@file
+      - traefik.http.services.comments-emotion-service.loadbalancer.server.port=8080
+
+  comments-theme:
+    image: 142412772381.dkr.ecr.eu-west-1.amazonaws.com/prodigy-quesmed-comments:latest
+    command: prodigy textcat.manual theme ./datasets/comments.jsonl --label clinical_update,community,question,education,advocating,dissuading,other --exclusive
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 60s
+      restart_policy:
+        condition: on-failure
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.comments-theme.rule=Host(`comments-theme.quesmed.com`)
+      - traefik.http.routers.comments-theme.tls=true
+      - traefik.http.routers.comments-theme.middlewares=https_redirect@file
+      - traefik.http.services.comments-theme-service.loadbalancer.server.port=8080
