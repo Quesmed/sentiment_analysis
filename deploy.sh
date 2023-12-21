@@ -1,1 +1,1 @@
-docker stack up --with-registry-auth -c compose.prod.yml quesmed-comments
+docker stack up --with-registry-auth -c compose.prod.yml comments
