@@ -13,12 +13,12 @@ services:
         delay: 60s
       restart_policy:
         condition: on-failure
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.comments-tone.rule=Host(`comments-tone.quesmed.com`)
-      - traefik.http.routers.comments-tone.tls=true
-      - traefik.http.routers.comments-tone.middlewares=https_redirect@file
-      - traefik.http.services.comments-tone-service.loadbalancer.server.port=8080
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.comments-tone.rule=Host(`comments-tone.quesmed.com`)
+        - traefik.http.routers.comments-tone.tls=true
+        - traefik.http.routers.comments-tone.middlewares=https_redirect@file
+        - traefik.http.services.comments-tone-service.loadbalancer.server.port=8080
 
   emotion:
     image: 142412772381.dkr.ecr.eu-west-1.amazonaws.com/prodigy-quesmed-comments:latest
@@ -32,12 +32,12 @@ services:
         delay: 60s
       restart_policy:
         condition: on-failure
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.comments-emotion.rule=Host(`comments-emotion.quesmed.com`)
-      - traefik.http.routers.comments-emotion.tls=true
-      - traefik.http.routers.comments-emotion.middlewares=https_redirect@file
-      - traefik.http.services.comments-emotion-service.loadbalancer.server.port=8080
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.comments-emotion.rule=Host(`comments-emotion.quesmed.com`)
+        - traefik.http.routers.comments-emotion.tls=true
+        - traefik.http.routers.comments-emotion.middlewares=https_redirect@file
+        - traefik.http.services.comments-emotion-service.loadbalancer.server.port=8080
 
   theme:
     image: 142412772381.dkr.ecr.eu-west-1.amazonaws.com/prodigy-quesmed-comments:latest
@@ -51,14 +51,13 @@ services:
         delay: 60s
       restart_policy:
         condition: on-failure
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.comments-theme.rule=Host(`comments-theme.quesmed.com`)
-      - traefik.http.routers.comments-theme.tls=true
-      - traefik.http.routers.comments-theme.middlewares=https_redirect@file
-      - traefik.http.services.comments-theme-service.loadbalancer.server.port=8080
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.comments-theme.rule=Host(`comments-theme.quesmed.com`)
+        - traefik.http.routers.comments-theme.tls=true
+        - traefik.http.routers.comments-theme.middlewares=https_redirect@file
+        - traefik.http.services.comments-theme-service.loadbalancer.server.port=8080
 
 networks:
   traefik-proxy:
     external: true
-
