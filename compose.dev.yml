@@ -30,10 +30,10 @@ services:
         delay: 60s
       restart_policy:
         condition: on-failure
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.comments-tone.rule=Host(`comments-tone.localhost`)
-      - traefik.http.services.comments-tone-service.loadbalancer.server.port=8080
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.comments-tone.rule=Host(`comments-tone.localhost`)
+        - traefik.http.services.comments-tone-service.loadbalancer.server.port=8080
 
   comments-emotion:
     image: 142412772381.dkr.ecr.eu-west-1.amazonaws.com/prodigy-quesmed-comments:latest
@@ -45,10 +45,10 @@ services:
         delay: 60s
       restart_policy:
         condition: on-failure
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.comments-emotion.rule=Host(`comments-emotion.localhost`)
-      - traefik.http.services.comments-emotion-service.loadbalancer.server.port=8080
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.comments-emotion.rule=Host(`comments-emotion.localhost`)
+        - traefik.http.services.comments-emotion-service.loadbalancer.server.port=8080
 
   comments-theme:
     image: 142412772381.dkr.ecr.eu-west-1.amazonaws.com/prodigy-quesmed-comments:latest
@@ -60,7 +60,7 @@ services:
         delay: 60s
       restart_policy:
         condition: on-failure
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.comments-theme.rule=Host(`comments-theme.localhost`)
-      - traefik.http.services.comments-theme-service.loadbalancer.server.port=8080
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.comments-theme.rule=Host(`comments-theme.localhost`)
+        - traefik.http.services.comments-theme-service.loadbalancer.server.port=8080
