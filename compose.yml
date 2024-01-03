@@ -26,7 +26,7 @@ services:
   comments-theme:
     image: prodigy-quesmed-comments
     container_name: comments-theme
-    command: prodigy textcat.manual theme ./datasets/comments.jsonl --label educational,feedback,question,insulting,supporting,humour,frustration --exclusive
+    command: prodigy textcat.manual theme ./datasets/comments.jsonl --label educational,feedback,question,insulting,supporting,humour,frustration
     ports:
       - 8082:8080
     depends_on:
